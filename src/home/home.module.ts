@@ -11,5 +11,6 @@ import { ExternalHomeRepository } from './repositories/external-home.repository'
     HomeService,
     { provide: 'HomeRepository', useClass: ExternalHomeRepository },
   ],
+  exports: [HomeService, 'HomeRepository']
 })
 export class HomeModule {}
