@@ -31,5 +31,7 @@ vercel --prod
 ## Structure
 
 - `AppController` calls `AppService`, which in turn calls `AppRepository`.
+- `AppRepository` is bound using the `GreetingRepository` provider token so that
+  `AppService` can depend on the `GreetingRepository` interface.
 - The `Custom` decorator sets `CustomProperty` metadata that `LoggingInterceptor` reads.
 - `AppRepository` uses an in-memory `Map` as a local cache.

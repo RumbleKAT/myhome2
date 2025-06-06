@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { GreetingRepository } from '../repositories/greeting.repository';
 
 export interface GreetingService {
@@ -7,7 +7,9 @@ export interface GreetingService {
 
 @Injectable()
 export class AppService implements GreetingService {
-  constructor(private readonly repo: GreetingRepository) {}
+  constructor(
+    @Inject('GreetingRepository') private readonly repo: GreetingRepository,
+  ) {}
 
   getGreeting(): string {
     return this.repo.getGreeting();

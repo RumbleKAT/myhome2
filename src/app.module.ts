@@ -6,6 +6,9 @@ import { AppRepository } from './repositories/greeting.repository';
 @Module({
   imports: [],
   controllers: [AppController],
-  providers: [AppService, AppRepository],
+  providers: [
+    AppService,
+    { provide: 'GreetingRepository', useClass: AppRepository },
+  ],
 })
 export class AppModule {}
