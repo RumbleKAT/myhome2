@@ -1,7 +1,6 @@
 import { HomeService } from '../src/home/services/home.service';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Test } from '@nestjs/testing';
-import { HomeRepository } from '../src/home/repositories/home.repository';
 
 const mockRepo = {
   fetchHomes: jest.fn(),
