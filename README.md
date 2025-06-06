@@ -22,7 +22,8 @@ npm run build
 
 ## Deploy to Vercel
 
-With `vercel.json` included you can deploy using the Vercel CLI.
+With `vercel.json` included you can deploy using the Vercel CLI. The entry point
+exports a handler function so Vercel can invoke NestJS as a serverless API.
 
 ```bash
 vercel --prod
